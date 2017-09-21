@@ -116,6 +116,10 @@ if (question == 'y' or question == 'Y' or question == 'YES' or question == 'yes'
 				tries += 1
 			
 			plt.plot(game_list,budget_list)
+			plt.xscale('log') 
+			plt.xlabel('Games')
+			plt.ylabel('Budget')
+			plt.title('Stats')
 			plt.show()
 			print ("You have",tries,"tries.")
 			key = input("Press any key to continue with next game...")
@@ -139,7 +143,14 @@ if (question == 'y' or question == 'Y' or question == 'YES' or question == 'yes'
 	print ("")
 	print("Unfortunately, you don't have other try. Game over.")
 	key = input("Press enter to exit game and see your stats...")
+	no_of_games+=no_of_games
+	game_list.append(no_of_games)
+	budget_list.append(0)
 	plt.plot(game_list,budget_list)
+	plt.xscale('log') 
+	plt.xlabel('Games')
+	plt.ylabel('Budget')
+	plt.title('Stats')
 	plt.show()
 
 #user chose no, so game will not start at all
